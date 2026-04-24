@@ -1,0 +1,6 @@
+{
+  "name": "ShotTracker Pro",
+  "description": "High-performance, voice-activated basketball shot tracker for pro-level practice sessions. Track FG% with 'make/miss' voice commands.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": []
+}
