@@ -1,13 +1,49 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shot Tracker</title>
+</head>
+<body style="background:black; color:white; text-align:center; font-family:sans-serif;">
 
+<h1>🏀 Shot Tracker</h1>
+
+<h2>Makes: <span id="makes">0</span></h2>
+<h2>Misses: <span id="misses">0</span></h2>
+<h2>Percentage: <span id="percent">0%</span></h2>
+
+<button onclick="make()">MAKE</button>
+<button onclick="miss()">MISS</button>
+<br><br>
+<button onclick="reset()">RESET</button>
+
+<script>
+let makes = 0;
+let misses = 0;
+
+function update() {
+let total = makes + misses;
+let percent = total === 0 ? 0 : Math.round((makes / total) * 100);
+document.getElementById("makes").innerText = makes;
+document.getElementById("misses").innerText = misses;
+document.getElementById("percent").innerText = percent + "%";
+}
+
+function make() {
+makes++;
+update();
+}
+
+function miss() {
+misses++;
+update();
+}
+
+function reset() {
+makes = 0;
+misses = 0;
+update();
+}
+</script>
+
+</body>
+</html>
